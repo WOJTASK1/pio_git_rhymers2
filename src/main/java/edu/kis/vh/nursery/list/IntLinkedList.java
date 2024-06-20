@@ -4,7 +4,7 @@ public class IntLinkedList {
 
     private Node last;
     private int i;
-
+    // TODO: delete unused 'i' field
     public void push(int i) {
         if (last == null)
             last = new Node(i);
@@ -22,7 +22,7 @@ public class IntLinkedList {
     public boolean isFull() {
         return false;
     }
-
+    // TODO: unused method and always returns false, add implementation?
     public int top() {
         if (isEmpty())
             return -1;
