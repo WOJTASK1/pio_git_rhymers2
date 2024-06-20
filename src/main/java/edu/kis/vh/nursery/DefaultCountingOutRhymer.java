@@ -5,10 +5,13 @@ package edu.kis.vh.nursery;
  */
 public class DefaultCountingOutRhymer {
 
-    private int[] numbers = new int[12];
+    private static final int MAX_SIZE = 12;
+    private static final int EMPTY_VALUE = -1;
+    private final int[] numbers = new int[MAX_SIZE];
+
+    public int total = EMPTY_VALUE;
 
 
-    private int total = -1;
     /**
      * Adds a number to the stack if it is not full.
      *
@@ -24,7 +27,7 @@ public class DefaultCountingOutRhymer {
      * @return true if the stack is empty, false otherwise
      */
     public boolean callCheck() {
-        return total == -1;
+        return total == EMPTY_VALUE;
     }
     /**
      * Checks if the stack is full.
@@ -32,7 +35,7 @@ public class DefaultCountingOutRhymer {
      * @return true if the stack is full, false otherwise
      */
     public boolean isFull() {
-        return total == 11;
+        return total == MAX_SIZE - 1;
     }
     /**
      * Returns top value of the stack.
@@ -41,7 +44,7 @@ public class DefaultCountingOutRhymer {
      */
     protected int peekaboo() {
         if (callCheck())
-            return -1;
+            return EMPTY_VALUE;
         return numbers[total];
     }
     /**
@@ -51,7 +54,7 @@ public class DefaultCountingOutRhymer {
      */
     public int countOut() {
         if (callCheck())
-            return -1;
+            return EMPTY_VALUE;
         return numbers[total--];
     }
 

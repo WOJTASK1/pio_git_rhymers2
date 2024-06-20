@@ -5,6 +5,9 @@ public class IntLinkedList {
     private Node last;
     private int i;
     // TODO: delete unused 'i' field
+    private static final int EMPTY_VALUE = -1;
+
+
     public void push(int i) {
         if (last == null)
             last = new Node(i);
@@ -25,13 +28,15 @@ public class IntLinkedList {
     // TODO: unused method and always returns false, add implementation?
     public int top() {
         if (isEmpty())
-            return -1;
+            return EMPTY_VALUE;
         return last.getValue();
+
+
     }
 
     public int pop() {
         if (isEmpty())
-            return -1;
+            return EMPTY_VALUE;
         int ret = last.getValue();
         last = last.getPrev();
         return ret;
